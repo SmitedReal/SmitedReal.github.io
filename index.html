@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+<header>
+    <h1>My Portfolio</h1>
+    <nav>
+        <button onclick="showTab('about')">About</button>
+        <button onclick="showTab('skills')">Skills</button>
+        <button onclick="showTab('projects')">Projects</button>
+        <button onclick="showTab('contact')">Contact</button>
+    </nav>
+</header>
+
+<section id="about" class="tab">
+    <h2>About Me</h2>
+    <p>
+        Welcome to my portfolio! I'm a passionate developer specializing in web design and modern web technologies.
+        I enjoy creating sleek, responsive, and user-friendly websites.
+    </p>
+</section>
+
+<section id="skills" class="tab" style="display: none;">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+        <li>Minecraft Plugins</li>
+        <li>MCreator Mods</li>
+        <li>Java</li>
+        <li>C# Unity</li>
+    </ul>
+</section>
+
+<section id="projects" class="tab" style="display: none;">
+    <h2>Projects</h2>
+    <!-- Container where GitHub repositories will be appended -->
+    <div id="projectList">
+        <!-- GitHub repos are dynamically loaded here -->
+    </div>
+</section>
+
+<section id="contact" class="tab" style="display: none;">
+    <h2>Contact</h2>
+    <div class="contact-info">
+        <div class="contact-section">
+            <h3>Email</h3>
+            <p>Smited@gmail.com</p>
+        </div>
+        <div class="contact-section">
+            <h3>Social</h3>
+            <p>
+                <a href="https://x.com/SqimpyGD" target="_blank">Twitter</a><br>
+                <a href="https://www.youtube.com/@SqimpyGD" target="_blank">YouTube</a><br>
+                <a href="https://modrinth.com/user/Smited" target="_blank">Modrinth</a><br>
+                <a href="https://github.com/SmitedReal" target="_blank">GitHub</a>
+            </p>
+        </div>
+    </div>
+    <div class="contact-form">
+        <h3>Send a Message</h3>
+        <!-- Updated Formspree endpoint -->
+        <form id="contactForm" action="https://formspree.io/f/xyzegbnk" method="POST">
+            <input type="text" name="name" id="name" placeholder="Your Name" required>
+            <input type="email" name="email" id="email" placeholder="Your Email" required>
+            <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</section>
+
+<script>
+    // Tab switching functionality
+    function showTab(tabId) {
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.style.display = 'none';
+      });
+      document.getElementById(tabId).style.display = 'block';
+    }
+</script>
+<!-- Fixed Footer -->
+<footer class="fixed-footer">
+    <p>Made with ChatGPT</p>
+</footer>
+</body>
+</html>
