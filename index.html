@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Smite'd</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
-</head>
+    <link rel="icon" href="img/icon.png" type="image/png">
 <body>
 <header>
-    <h1>My Portfolio</h1>
+    <h1>Smite'd</h1>
     <nav>
         <button onclick="showTab('about')">About</button>
         <button onclick="showTab('skills')">Skills</button>
@@ -21,27 +21,37 @@
 
 <section id="about" class="tab">
     <h2>About Me</h2>
-    <p>
-    Hey, I'm Smite'd, a small game and Minecraft plugin developer.
-    </p>
+
+    <div class="about-section">
+        <h3>Who Am I?</h3>
+        <p>Hey, I'm Smite'd, a small game and Minecraft plugin developer. I have a passion for coding and creating unique experiences within games.</p>
+    </div>
+
+    <div class="about-section">
+        <h3>What I Do</h3>
+        <p>I specialize in developing Minecraft plugins, mods, and working with tools like MCreator. My journey into game development started with my love for Minecraft, which led me to explore programming in Java and C#. Over time, I’ve built various plugins, mods, and small game projects that enhance gameplay and bring new mechanics to life.</p>
+    </div>
+
+    <div class="about-section">
+        <h3>My Goals</h3>
+        <p>My focus is on making engaging, functional, and optimized game content. Whether it's customizing Minecraft servers, designing mods, or experimenting with Unity for game development, I always strive to improve and learn new skills. Check out my projects to see what I've been working on!</p>
+    </div>
 </section>
+
 
 <section id="skills" class="tab" style="display: none;">
     <h2>Skills</h2>
     <ul class="skills-list">
-        <li>Minecraft Plugins</li>
-        <li>MCreator Mods</li>
-        <li>Java</li>
-        <li>C# Unity</li>
+        <li class="skill-item">Minecraft Plugins</li>
+        <li class="skill-item">MCreator Mods</li>
+        <li class="skill-item">Java</li>
+        <li class="skill-item">C# Unity</li>
     </ul>
 </section>
 
 <section id="projects" class="tab" style="display: none;">
     <h2>Projects</h2>
-    <!-- Container where GitHub repositories will be appended -->
-    <div id="projectList">
-        <!-- GitHub repos are dynamically loaded here -->
-    </div>
+    <div id="projectList"></div>
 </section>
 
 <section id="contact" class="tab" style="display: none;">
@@ -55,15 +65,35 @@
             <h3>Social</h3>
             <p>
                 <a href="https://x.com/SqimpyGD" target="_blank">Twitter</a><br>
+            </p>
+        </div>
+        <div class="contact-section">
+            <h3>Social</h3>
+            <p>
                 <a href="https://www.youtube.com/@SqimpyGD" target="_blank">YouTube</a><br>
+            </p>
+        </div>
+        <div class="contact-section">
+            <h3>Social</h3>
+            <p>
                 <a href="https://modrinth.com/user/Smited" target="_blank">Modrinth</a><br>
+            </p>
+        </div>
+        <div class="contact-section">
+            <h3>Social</h3>
+            <p>
                 <a href="https://github.com/SmitedReal" target="_blank">GitHub</a>
+            </p>
+        </div>
+        <div class="contact-section">
+            <h3>Social</h3>
+            <p>
+                <a href="https://smitegee.itch.io/" target="_blank">GitHub</a>
             </p>
         </div>
     </div>
     <div class="contact-form">
         <h3>Send a Message</h3>
-        <!-- Updated Formspree endpoint -->
         <form id="contactForm" action="https://formspree.io/f/xyzegbnk" method="POST">
             <input type="text" name="name" id="name" placeholder="Your Name" required>
             <input type="email" name="email" id="email" placeholder="Your Email" required>
@@ -73,8 +103,10 @@
     </div>
 </section>
 
+<footer class="fixed-footer">
+    <p>Made with ChatGPT</p>
+</footer>
 <script>
-    // Tab switching functionality
     function showTab(tabId) {
       document.querySelectorAll('.tab').forEach(tab => {
         tab.style.display = 'none';
@@ -82,9 +114,5 @@
       document.getElementById(tabId).style.display = 'block';
     }
 </script>
-<!-- Fixed Footer -->
-<footer class="fixed-footer">
-    <p>Made with ChatGPT</p>
-</footer>
 </body>
 </html>
