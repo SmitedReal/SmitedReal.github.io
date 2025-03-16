@@ -190,6 +190,23 @@ section {
     box-shadow: 0 2px 8px #2A2A2A;
   }
 
+  .tab button {
+    background: #fff;
+    color: #2575F;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+  }
+
+  .tab button:hover {
+    background: #f0f0f0;
+    transform: translateY(-3px);
+  }
+
   .about-section {
     margin-bottom: 20px;
     background: #F1F1F1;
@@ -207,7 +224,8 @@ section {
     margin: 0;
     color: #666;
   }
-}
+
+
 
 .skills-list {
   list-style-type: none;
@@ -230,4 +248,29 @@ section {
 .skill-item:hover {
   color: #2575fc;
   text-decoration: underline;
+}
+
+.floating-window {
+  position: absolute;
+  width: 250px;
+  height: 150px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  user-select: none
+}
+
+.floating-header {
+  padding: 10px;
+  background: #f0f0f0;
+  cursor: move;
+  font-weight: bold;
+  border-bottom: 3.25px solid #272EFC;
+  border: 3.25px solid #272EFC;
+}
+
+.floating-window p {
+  padding: 10px;
+  margin: 0;
 }
