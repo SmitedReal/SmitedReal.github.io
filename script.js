@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(response => response.json())
     .then(repos => {
       repos.forEach(repo => {
-        // Prevent duplicate entries
-        if (!seenRepos.has(repo.name)) {
+        // Prevent duplicate entries and exclude "SmitedReal.github.io"
+        if (!seenRepos.has(repo.name) && repo.name !== "SmitedReal.github.io") {
           seenRepos.add(repo.name);
 
           const repoName = repo.name;

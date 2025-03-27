@@ -274,3 +274,20 @@ section {
   padding: 10px;
   margin: 0;
 }
+
+.games {
+    margin-bottom: 20px;
+    background: #F1F1F1;
+    padding: 15px;
+    border-radius: 25px;
+    box-shadow: 0 0.5px 0.5px #000000;
+}
+.flyted a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #2575FC;
+  text-decoration: none;
+  transition: color 0.3s, text-decoration 0.3s;
+  font-weight: bold;
+    }
+}
