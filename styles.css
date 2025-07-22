@@ -354,75 +354,6 @@ section h2::after {
   opacity: 0.9;
 }
 
-/* Flyte'd Section */
-.flyted {
-  background: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-}
-
-.flyted h3 {
-  color: var(--primary);
-  margin-bottom: 1rem;
-}
-
-.flyted p {
-  color: var(--text-light);
-  margin-bottom: 1rem;
-}
-
-.flyted a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-right: 1rem;
-  color: var(--secondary);
-  text-decoration: none;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  background: rgba(33, 150, 243, 0.1);
-  transition: var(--transition);
-}
-
-.flyted a:hover {
-  background: rgba(33, 150, 243, 0.2);
-  color: var(--primary);
-}
-
-/* Floating Window */
-.floating-window {
-  position: fixed;
-  width: 300px;
-  min-height: 200px;
-  background: var(--card-bg);
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  user-select: none;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-}
-
-.floating-header {
-  padding: 0.75rem 1rem;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  cursor: move;
-  font-weight: 600;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.floating-content {
-  padding: 1rem;
-  flex-grow: 1;
-  overflow-y: auto;
-}
-
 /* Footer */
 .fixed-footer {
   position: fixed;
@@ -441,25 +372,6 @@ section h2::after {
   opacity: 0.9;
 }
 
-/* Create Window Button */
-#createFrameBtn {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: var(--transition);
-  font-weight: 600;
-  box-shadow: var(--shadow);
-  margin-top: 1rem;
-}
-
-#createFrameBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  opacity: 0.9;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
