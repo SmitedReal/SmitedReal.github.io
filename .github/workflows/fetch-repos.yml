@@ -5,11 +5,15 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Fetch and format full GitHub repo metadata
@@ -40,7 +44,7 @@ jobs:
                   archived: r.archived,
                   stargazers_count: r.stargazers_count,
                   forks_count: r.forks_count,
-                  commit_count: r.size || null, // fallback estimate
+                  commit_count: r.size || null,
                   release_count: releases.data.length,
                   latest_release: releases.data[0]?.name || releases.data[0]?.tag_name || null,
                   latest_tag: tags.data[0]?.name || null,
