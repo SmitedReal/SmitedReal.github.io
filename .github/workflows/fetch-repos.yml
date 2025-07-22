@@ -1,0 +1,46 @@
+name: Build repo data
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Fetch GitHub repo data
+        uses: actions/github-script@v6
+        with:
+          result-encoding: string
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const repos = await github.rest.repos.listForUser({
+              username: 'SmitedReal',
+              per_page: 100
+            });
+            // For each repo we want only the fields we display
+            const slim = repos.data.map(r => ({
+              name: r.name,
+              description: r.description,
+              html_url: r.html_url,
+              archived: r.archived,
+              stargazers_count: r.stargazers_count,
+              forks_count: r.forks_count,
+            }));
+            return JSON.stringify(slim, null, 2);
+        id: getRepos
+
+      - name: Save repo data
+        run: |
+          echo "${{ steps.getRepos.outputs.result }}" > public/repos.json
+
+      - name: Commit and push data
+        run: |
+          git config user_name "github-actions[bot]"
+          git config user_email "github-actions[bot]@users.noreply.github.com"
+          git add public/repos.json
+          git commit -m "chore: update repos.json" || echo "no changes"
+          git push
