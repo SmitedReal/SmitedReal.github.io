@@ -56,6 +56,7 @@ jobs:
 
       - name: Save repos.json file
         run: |
+          mkdir -p public
           echo '${{ steps.getRepos.outputs.formatted }}' > public/repos.json
 
       - name: Commit and push updated JSON
