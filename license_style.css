@@ -1,0 +1,72 @@
+body {
+            background: #f5f7fa;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .container {
+            background: #fff;
+            max-width: 720px;
+            padding: 2rem 3rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+            line-height: 1.6;
+        }
+        h1 {
+            margin-top: 0;
+            font-weight: 700;
+            font-size: 1.8rem;
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 0.25rem;
+            letter-spacing: 0.05em;
+        }
+        h2 {
+            font-weight: 500;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        pre {
+          background: #272822;
+          color: #f8f8f2;
+          padding: 1.5rem;
+          border-radius: 8px;
+          overflow-x: auto;
+          font-family: 'Source Code Pro', monospace;
+          font-size: 1rem;
+          white-space: pre-wrap;
+          word-wrap: break-word;
+          margin: 0;         /* remove extra margin */
+          text-indent: 0;    /* remove any accidental indent */
+        }
+
+        footer {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            text-align: center;
+            color: #95a5a6;
+            user-select: none;
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.5rem 1.5rem;
+            }
+        }
+
+        .license-text {
+          white-space: pre-wrap;
+          background: #272822;
+          color: #f8f8f2;
+          padding: 1.5rem;
+          border-radius: 8px;
+          font-family: 'Source Code Pro', monospace;
+        }

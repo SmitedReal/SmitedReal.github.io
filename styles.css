@@ -1,5 +1,4 @@
 :root {
-  /* Color palette */
   --primary: #673AB7;
   --secondary: #2196F3;
   --accent: #FF5722;
@@ -17,28 +16,32 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   background: var(--bg);
   color: var(--text);
-  padding: 20px;
+  padding: 0 20px;
   min-height: 100vh;
-  position: relative;
-  padding-bottom: 60px; /* Space for footer */
+  padding-bottom: 60px;
 }
 
-/* Header Styles */
+/* Header */
 header {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
-  padding: 2rem;
+  padding: 2rem 1rem;
   text-align: center;
   border-radius: 12px;
   margin-bottom: 2rem;
   box-shadow: var(--shadow);
-  position: relative;
-  overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 header::before {
@@ -65,7 +68,6 @@ nav {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 2rem;
   flex-wrap: wrap;
 }
 
@@ -85,6 +87,17 @@ nav button {
   z-index: 1;
 }
 
+nav button.active {
+  background: var(--primary);
+  color: white;
+}
+
+nav button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  color: white;
+}
+
 nav button::before {
   content: '';
   position: absolute;
@@ -97,17 +110,11 @@ nav button::before {
   z-index: -1;
 }
 
-nav button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  color: white;
-}
-
 nav button:hover::before {
   width: 100%;
 }
 
-/* Section Styling */
+/* Section styling */
 section {
   background: var(--card-bg);
   padding: 2rem;
@@ -118,7 +125,7 @@ section {
 }
 
 section:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
 section h2 {
@@ -139,7 +146,7 @@ section h2::after {
   background: linear-gradient(90deg, var(--primary), var(--secondary));
 }
 
-/* About Section */
+/* About */
 .about-section {
   margin-bottom: 1.5rem;
   background: var(--card-bg);
@@ -165,7 +172,7 @@ section h2::after {
   line-height: 1.7;
 }
 
-/* Skills Section */
+/* Skills */
 .skills-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -208,7 +215,7 @@ section h2::after {
   opacity: 1;
 }
 
-/* Projects Section */
+/* Projects */
 .project {
   background: linear-gradient(135deg, #fdfdfd, #e8f0ff);
   border-radius: 12px;
@@ -222,14 +229,13 @@ section h2::after {
 
 .project:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
 }
 
 .project h3 {
   font-size: 1.3rem;
   color: var(--primary);
   display: flex;
-  align-items: center;
   justify-content: space-between;
   margin-bottom: 0.75rem;
 }
@@ -271,7 +277,7 @@ section h2::after {
   padding-top: 1rem;
 }
 
-/* Contact Section */
+/* Contact */
 .contact-info {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -350,7 +356,7 @@ section h2::after {
 
 .contact-form button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
   opacity: 0.9;
 }
 
@@ -365,6 +371,7 @@ section h2::after {
   text-align: center;
   padding: 1rem 0;
   z-index: 100;
+  pointer-events: none;
 }
 
 .fixed-footer p {
@@ -372,33 +379,14 @@ section h2::after {
   opacity: 0.9;
 }
 
-
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
-  body {
-    padding: 1rem;
-  }
-
-  header {
-    padding: 1.5rem 1rem;
-  }
-
-  nav {
-    gap: 0.5rem;
-  }
-
-  nav button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  section {
-    padding: 1.5rem;
-  }
-
-  .contact-info {
-    grid-template-columns: 1fr;
-  }
+  body { padding: 1rem; }
+  header { padding: 1.5rem 1rem; }
+  nav { gap: 0.5rem; }
+  nav button { padding: 0.5rem 1rem; font-size: 0.9rem; }
+  section { padding: 1.5rem; }
+  .contact-info { grid-template-columns: 1fr; }
 }
 
 @media (min-width: 1200px) {
@@ -406,4 +394,28 @@ section h2::after {
     max-width: 1200px;
     margin: 0 auto;
   }
+}
+
+.tab {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.tab.inactive {
+  opacity: 0.3;
+}
+
+
+#homeTitle {
+  cursor: pointer;
+  background: none;
+  user-select: none;
+}
+
+#homeTitle:hover {
+  opacity: 0.8;
+}
+
+#homeTitle:active {
+  transform: scale(0.98);
 }
