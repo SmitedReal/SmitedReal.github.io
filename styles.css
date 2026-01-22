@@ -4,7 +4,7 @@
   --accent: #FF5722;
   --text: #2D3748;
   --text-light: #4A5568;
-  --bg: #F5F7FA;
+  --bg: #ada7cc;
   --card-bg: #FFFFFF;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -57,8 +57,10 @@ header::before {
 
 header h1 {
   margin-bottom: 1rem;
-  font-weight: 700;
-  font-size: 2.5rem;
+  font-family: "Titan One", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 4.0rem;
   position: relative;
   text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
@@ -148,6 +150,7 @@ section h2::after {
 
 /* About */
 .about-section {
+  border: 4px solid #d2cfe6;
   margin-bottom: 1.5rem;
   background: var(--card-bg);
   padding: 1.5rem;
@@ -158,7 +161,9 @@ section h2::after {
 }
 
 .about-section:hover {
+  background: linear-gradient(135deg, rgba(103, 58, 183, 0.1), rgba(33, 150, 243, 0.1));
   transform: translateX(5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
 }
 
 .about-section h3 {
@@ -191,7 +196,7 @@ section h2::after {
   align-items: center;
   position: relative;
   overflow: hidden;
-  border-left: 4px solid var(--secondary);
+  border-left: 4px solid var(--primary);
 }
 
 .skill-item::before {
@@ -201,7 +206,7 @@ section h2::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(103, 58, 183, 0.1), rgba(33, 150, 243, 0.1));
+  background: linear-gradient(135deg, rgba(103, 58, 183, 0.2), rgba(33, 150, 243, 0.2));
   opacity: 0;
   transition: var(--transition);
 }
@@ -230,6 +235,7 @@ section h2::after {
 .project:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, rgba(103, 58, 183, 0.1), rgba(33, 150, 243, 0.1));
 }
 
 .project h3 {
@@ -289,14 +295,15 @@ section h2::after {
   background: var(--card-bg);
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 6px rgba(68, 50, 115, 0.30);
   transition: var(--transition);
-  border-top: 3px solid var(--secondary);
+  border-top: 4px solid var(--primary);
 }
 
 .contact-section:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 16px rgba(68, 50, 115, 0.30);
+  background: linear-gradient(135deg, rgba(103, 58, 183, 0.1), rgba(33, 150, 243, 0.1));
 }
 
 .contact-section h3 {
