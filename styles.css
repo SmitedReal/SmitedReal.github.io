@@ -4,7 +4,7 @@
   --accent: #FF5722;
   --text: #2D3748;
   --text-light: #4A5568;
-  --bg: #ada7cc;
+  --bg: linear-gradient(167deg, #ada7cc, #7b70b3);
   --card-bg: #FFFFFF;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -98,6 +98,7 @@ nav button:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   color: white;
+  padding: 1.0rem 2.0rem;
 }
 
 nav button::before {
@@ -169,12 +170,13 @@ section h2::after {
 .about-section h3 {
   margin-bottom: 0.75rem;
   color: var(--primary);
-  font-size: 1.3rem;
+  font-size: 25px;
 }
 
 .about-section p {
   color: var(--text-light);
   line-height: 1.7;
+  font-size: 18px;
 }
 
 /* Skills */
@@ -191,6 +193,7 @@ section h2::after {
   border-radius: 8px;
   box-shadow: var(--shadow);
   font-weight: 600;
+  font-size: 20px;
   transition: var(--transition);
   display: flex;
   align-items: center;
@@ -214,6 +217,7 @@ section h2::after {
 .skill-item:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  padding: 1.75rem;
 }
 
 .skill-item:hover::before {
@@ -236,10 +240,11 @@ section h2::after {
   transform: translateY(-5px);
   box-shadow: 0 12px 20px rgba(0,0,0,0.15);
   background: linear-gradient(135deg, rgba(103, 58, 183, 0.1), rgba(33, 150, 243, 0.1));
+  padding: 2.0rem;
 }
 
 .project h3 {
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   color: var(--primary);
   display: flex;
   justify-content: space-between;
@@ -250,6 +255,7 @@ section h2::after {
   color: var(--text-light);
   font-weight: 500;
   margin-bottom: 0.75rem;
+  font-size: 17.5px;
 }
 
 .project a {
@@ -268,6 +274,7 @@ section h2::after {
 .project a:hover {
   background: rgba(33, 150, 243, 0.2);
   color: var(--primary);
+  padding: 1.0rem 1.5rem;
 }
 
 .project-details {
@@ -314,7 +321,9 @@ section h2::after {
 .contact-section a {
   color: var(--secondary);
   text-decoration: none;
+  font-family: "Playwrite NZ Basic", cursive;
   font-weight: 500;
+  font-size: 20px;
   transition: var(--transition);
   display: inline-block;
   margin-bottom: 0.5rem;
